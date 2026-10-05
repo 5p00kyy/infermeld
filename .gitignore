@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+build/
+vendor/
+models/
+receipts/
+dist/
+unpacked/
+.env
+.env.*

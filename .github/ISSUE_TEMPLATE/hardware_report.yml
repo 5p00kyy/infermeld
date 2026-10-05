@@ -1,0 +1,58 @@
+name: Hardware result or failure
+description: Report a reproducible success, fit result, performance observation or failure.
+title: '[Hardware] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Partial reports and failures are welcome. Use `unknown` where you lack evidence.
+        Remove credentials, private paths, IP addresses, raw chats and local cooling diagnostics.
+        Aborted runs are incomplete evidence, not valid performance measurements.
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result and stage
+      options:
+        - Short serving succeeded
+        - Context allocation succeeded (not full-length quality)
+        - Representative workload completed
+        - Preflight failed
+        - Loading or first completion failed
+        - Guard stopped the workload
+        - Shutdown or cleanup failed
+        - Other or unknown
+    validations:
+      required: true
+  - type: textarea
+    id: topology
+    attributes:
+      label: Physical GPUs and runtime
+      description: GPU models/VRAM variants, CUDA/Vulkan identifiers mapped to physical cards, OS and driver/runtime versions. Unknowns are fine.
+    validations:
+      required: true
+  - type: textarea
+    id: engine
+    attributes:
+      label: Engine provenance
+      description: llama.cpp revision, build options and binary/library SHA-256 if known. A checkout revision alone does not prove binary origin.
+    validations:
+      required: true
+  - type: textarea
+    id: model
+    attributes:
+      label: Exact model artifact
+      description: Filename, publisher/repository, immutable revision, size and SHA-256 if known. No weights or private paths.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and observed behaviour
+      description: Sanitized command, split, reserved context, cache precision, microbatch, threads, speculation and stage reached. Include expected versus observed behaviour for failures.
+    validations:
+      required: true
+  - type: textarea
+    id: measurements
+    attributes:
+      label: Measurements and limitations
+      description: Optional. State actual prompt/output tokens, cache state, timing definitions and repetitions. Separate allocation, short serving, full-prompt quality, prefill and decode. Mark unknown or unrun explicitly.

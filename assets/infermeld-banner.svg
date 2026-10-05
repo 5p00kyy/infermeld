@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="278" viewBox="0 0 830 278" role="img" aria-labelledby="title desc" data-banner="wide">
+  <title id="title">Infermeld. Different silicon. One model.</title>
+  <desc id="desc">AMD Vulkan and NVIDIA CUDA grouped around one local GGUF, powered by separately built llama.cpp. A conceptual grouping, not a timing diagram. Device memory remains separate.</desc>
+  <rect width="830" height="278" fill="#101513"/>
+  <g data-block="brand" transform="translate(60.000 34.500)" font-family="Arial,Helvetica,sans-serif">
+      <g fill="none" stroke-width="2.6" transform="scale(.72) translate(-65 -63)">
+        <path d="M65 63h30v30H65V63Zm15 15h30v30H80V78Z" stroke="#a6ecc1"/>
+        <path d="M95 63h15v15M65 93v15h15" stroke="#ef917c"/>
+      </g>
+      <text x="45" y="27" fill="#f0f2e8" font-size="30" font-weight="700" letter-spacing="-1">infermeld</text>
+    </g>
+  <g data-block="copy" transform="translate(60.000 104.500)" font-family="Arial,Helvetica,sans-serif">
+          <text x="0" y="40" fill="#f0f2e8" font-size="40" font-weight="700" letter-spacing="-1">Different silicon.</text>
+          <text x="0" y="84" fill="#a6ecc1" font-size="40" font-weight="700" letter-spacing="-1">One model.</text>
+          <text x="0" y="114" fill="#becbc2" font-size="15">AMD + NVIDIA inference.</text>
+          <text x="0" y="136" fill="#becbc2" font-size="15">Powered by llama.cpp.</text>
+        </g>
+  <g data-block="devices" transform="translate(532.000 57.500)" font-family="Arial,Helvetica,sans-serif">
+          <text x="110" y="14" text-anchor="middle" fill="#becbc2" font-size="14">One local GGUF</text>
+          <g data-card="amd"><rect x="0" y="26" width="220" height="62" rx="3" fill="#1c211e" stroke="#ef917c"/>
+            <text x="16" y="52" fill="#ef917c" font-size="18" font-weight="700">AMD</text>
+            <text x="16" y="74" fill="#becbc2" font-size="14">Vulkan backend</text></g>
+          <g data-card="nvidia"><rect x="0" y="100" width="220" height="62" rx="3" fill="#1c211e" stroke="#a6ecc1"/>
+            <text x="16" y="126" fill="#a6ecc1" font-size="18" font-weight="700">NVIDIA</text>
+            <text x="16" y="148" fill="#becbc2" font-size="14">CUDA backend</text></g>
+          <path d="M230 26h8v136h-8" fill="none" stroke="#32413a" stroke-width="1.5"/>
+        </g>
+</svg>

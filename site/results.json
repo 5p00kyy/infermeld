@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "status": "pre-release reference experiment, not a clean-checkout Infermeld benchmark",
+  "date": "2026-10-04",
+  "source_pin": "b92761a515ea31e852e7fbc1fad5f874b46f3718",
+  "binary_sha256": "c8bf6be6f0ac86c5189f7bb606733bffb33b86dbeaeb2e652e377719f3667da8",
+  "repetitions": 1,
+  "hardware": {
+    "amd": "Radeon RX 6900 XT \u00b7 16 GB",
+    "nvidia": "GeForce RTX 3080 \u00b7 10 GB"
+  },
+  "settings": {
+    "backends": [
+      "Vulkan",
+      "CUDA"
+    ],
+    "split_mode": "layer",
+    "split": [
+      3,
+      2
+    ],
+    "cache": "q8_0",
+    "ubatch": 32,
+    "context": 4096,
+    "mtp": 4,
+    "threads": 8,
+    "cpu_expert_layers": 0,
+    "greedy": true,
+    "seed": 1234
+  },
+  "models": {
+    "dense": {
+      "label": "27B dense",
+      "artifact": "Qwen3.8-27B-UD-IQ3_XXS.gguf",
+      "source_repository": "unsloth/Qwen3.8-27B-GGUF",
+      "source_revision": "f975863083b62f54a5e6fac11671c750c2bbc59c",
+      "sha256": "0a6129dcbbbe72f423dc67e0e3bbfbbdf3e923981a3637687ebb96a46c59d6be",
+      "bytes": 11913559104,
+      "model_creator": "Qwen Team",
+      "quantization_publisher": "Unsloth",
+      "publisher_declared_license": "apache-2.0"
+    },
+    "moe": {
+      "label": "35B-A3B MoE",
+      "artifact": "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
+      "source_repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+      "source_revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+      "sha256": "36f9ec0e4c775f6efd3a61c1ea76f0875128469c3d012e3d9e2495a90e7a7150",
+      "bytes": 14069266720,
+      "model_creator": "Qwen Team",
+      "quantization_publisher": "Unsloth",
+      "publisher_declared_license": "apache-2.0"
+    }
+  },
+  "limitations": [
+    "Host CPU and RAM metadata omitted from this shared record; not a fully specified cross-machine comparison.",
+    "Single repetition per model and workload; no confidence intervals.",
+    "Different models are not a like-for-like engine or GPU comparison.",
+    "Fixed MTP4 is not the best setting for every workload.",
+    "Prompt-processing rates use short 56/65-token uncached prompts at ubatch32, not a sustained prefill benchmark.",
+    "Results are from the pinned pre-release experiment with the optional placement policy disabled.",
+    "No claim of universal speedup, direct cross-vendor memory sharing or parity with another GPU setup."
+  ],
+  "rows": [
+    {
+      "family": "dense",
+      "workload": "code",
+      "decode_tps": 55.64241894908566,
+      "end_to_end_tps": 52.54145546054082,
+      "prefill_tps": 115.60908439669605,
+      "prompt_tokens": 56,
+      "prompt_ms": 484.391,
+      "cached_prompt_tokens": 0,
+      "output_tokens": 512,
+      "drafted": 476,
+      "accepted": 391,
+      "finish_reason": "length"
+    },
+    {
+      "family": "dense",
+      "workload": "prose",
+      "decode_tps": 31.482987973375376,
+      "end_to_end_tps": 30.4468800748326,
+      "prefill_tps": 133.2079129599003,
+      "prompt_tokens": 65,
+      "prompt_ms": 487.959,
+      "cached_prompt_tokens": 0,
+      "output_tokens": 512,
+      "drafted": 848,
+      "accepted": 297,
+      "finish_reason": "length"
+    },
+    {
+      "family": "moe",
+      "workload": "code",
+      "decode_tps": 144.23766302243106,
+      "end_to_end_tps": 132.52417893593383,
+      "prefill_tps": 194.61135070703,
+      "prompt_tokens": 56,
+      "prompt_ms": 287.753,
+      "cached_prompt_tokens": 0,
+      "output_tokens": 512,
+      "drafted": 504,
+      "accepted": 385,
+      "finish_reason": "length"
+    },
+    {
+      "family": "moe",
+      "workload": "prose",
+      "decode_tps": 91.6402730126928,
+      "end_to_end_tps": 86.85783181383022,
+      "prefill_tps": 234.87919982076912,
+      "prompt_tokens": 65,
+      "prompt_ms": 276.738,
+      "cached_prompt_tokens": 0,
+      "output_tokens": 512,
+      "drafted": 818,
+      "accepted": 305,
+      "finish_reason": "length"
+    }
+  ]
+}

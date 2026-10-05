@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101513">
+<meta name="description" content="Infermeld: reproducible AMD + NVIDIA local inference, powered by llama.cpp. Real measurements, tested recipes, and honest limitations.">
+<title>Infermeld · Q3 experiment history</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="q4.css">
+<script type="module" src="app.mjs"></script>
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="header">  <a class="brand" href="index.html" aria-label="Infermeld home"><svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 5h22v22H5V5Zm12 12h18v18H17V17Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M27 5h8v12M5 27v8h12" fill="none" stroke="var(--coral)" stroke-width="2"/></svg>infermeld<span class="brand-dot">/</span></a>
+<nav aria-label="Main navigation"><a href="index.html">Q4 overview ↗</a><a href="#measurements">Q3 observations</a></nav></header><main id="main"><div class="wrap history-intro"><div class="eyebrow">RETAINED EXPERIMENT HISTORY</div><h1>Q3 observations.<br><span>Not Q4 speeds.</span></h1><p>These IQ3-labelled experiments helped develop the recipe. They are single-repetition observations, not measurements of the Q4 artifacts now featured on the main page.</p><a class="text-link" href="index.html">Return to the Q4 capacity evidence ↗</a></div><section class="measurements wrap" id="measurements" aria-labelledby="measurements-title">
+  <div class="section-heading"><div><div class="eyebrow">02 / MEASURED, NOT PROMISED</div><h2 id="measurements-title">Show the work.</h2></div><p>Two model families. Two workloads.<br>Every number comes with its conditions.</p></div>
+  <div class="experiment-line"><span class="tag">REFERENCE EXPERIMENT</span><span>04 OCT 2026</span><span>Vulkan + CUDA</span><span>Fixed MTP4</span><span>n = 1 / condition</span></div>
+  <div class="chart-shell">
+    <div class="chart-toolbar"><div class="segment" role="group" aria-label="Benchmark workload"><button type="button" data-workload="code" aria-pressed="true">Code generation</button><button type="button" data-workload="prose" aria-pressed="false">Prose generation</button></div><label class="metric-label">Metric <select id="metric"><option value="decode_tps">Decode tok/s</option><option value="end_to_end_tps">End-to-end tok/s</option><option value="prefill_tps">Short-prompt rate</option></select></label></div>
+    <p id="chart-description" class="chart-description">Server-reported decode throughput. Excludes prefill; not an end-to-end speed measure.</p>
+    <div class="chart-status" id="chart-status" role="status">Loading the retained measurements…</div>
+    <div class="chart" id="chart" role="img" aria-label="Benchmark chart loading" hidden></div>
+    <div class="chart-axis" id="chart-axis" aria-hidden="true" hidden></div>
+    <div class="chart-footer"><span><i class="legend-dot coral"></i>27B dense</span><span><i class="legend-dot mint"></i>35B-A3B MoE</span><span>512 output tokens · greedy · same hardware</span></div>
+  </div>
+  <div class="measurement-underlay"><div><span class="micro-label">READ THESE AS OBSERVATIONS</span><p>One repetition per workload, no confidence intervals. Host CPU/RAM metadata is omitted from the shared record; these are not fully specified cross-machine comparisons. Different model families are <strong>not</strong> a like-for-like engine or GPU comparison. Fixed MTP4 is not the best depth for every task.</p></div><div><span class="micro-label">MAKE IT AUDITABLE</span><p>Exact settings, real drafted/accepted counts, artifact names, and the experiment binary digest are retained in the downloadable record.</p><a class="text-link" href="results.json" download>Download the measurement record <span aria-hidden="true">↗</span></a></div></div>
+  <details class="methodology"><summary>Inspect the test conditions <span aria-hidden="true">+</span></summary><div class="methodology-body"><dl><div><dt>Reference GPUs</dt><dd>RX 6900 XT 16 GB · RTX 3080 10 GB</dd></div><div><dt>Placement</dt><dd>Layer split · Vulkan0, CUDA0 · 3:2</dd></div><div><dt>Cache / execution</dt><dd>q8_0 · ubatch32 · context4096 · 8 threads</dd></div><div><dt>Speculation</dt><dd>Embedded draft-MTP · fixed maximum depth4</dd></div><div><dt>Generation</dt><dd>Greedy · seed1234 · 512 tokens · one repetition</dd></div><div><dt>Scope</dt><dd>Pre-release experiment; optional placement policy disabled. Not a clean-checkout kit benchmark.</dd></div><div><dt>Upstream pin</dt><dd><code id="source-pin">Loading…</code></dd></div></dl><table><caption>Exact values for the selected workload</caption><thead><tr><th scope="col">Model</th><th scope="col">Decode tok/s</th><th scope="col">End-to-end tok/s</th><th scope="col">Drafted / accepted</th></tr></thead><tbody id="result-table"></tbody></table></div></details>
+  <noscript><p class="callout">The interactive chart requires JavaScript. All measurements and limitations are available in <a href="results.json">the JSON record</a>.</p></noscript>
+</section>
+</main><footer class="footer wrap">Infermeld · experimental companion kit · powered by llama.cpp</footer></body></html>

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-04",
+  "status": "Sanitized retained fresh-build CLI acceptance: short checks and owned teardown, not throughput or full-length context quality.",
+  "source_pin": "b92761a515ea31e852e7fbc1fad5f874b46f3718",
+  "cli_sha256": "11a751906c9a50e001d6f0aadc10baf797dc0e59aefb336a31904d2e4abfcec9",
+  "model": {
+    "artifact": "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "source_repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+    "source_revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+    "bytes": 22663387424,
+    "sha256": "0b21525e972670ed59e1812e170b27c26355381f0656ecc4e25617ece7dac58b"
+  },
+  "engine_cohort_sha256": {
+    "llama-server": "27ef942a4f6d60d34d57949d84c5828897138096084f0417ca0a4ad2ced7c154",
+    "libllama.so.0.5.0": "e4080a559a71bd45968380e1a2b608d589b6a9bf67878effa58a70ffc42a3206",
+    "libllama-bench-impl.so": "ae8a9182c9244790565e9fc5331feb8d8004af56a3501b5d093d61383fd9ea4f",
+    "libggml-vulkan.so.0.25.3": "bbf9bdb455fc2d52837c3f9debdd236abd4a2b41e1e51d924063c575bd05933d",
+    "libggml.so.0.25.3": "f93ac6558c84fb52ae50b38f6b917a6ef988227e82dae7d227df56a4ab2ead2b",
+    "libggml-cpu.so.0.25.3": "073c45b2835523412895ffead33686db1fc591a8f30ad52ec6db49509ac98282",
+    "libggml-cuda.so.0.25.3": "345507df83f6a376f1c5a87992c2f684e9bf33461d4b17d1a4c0666710dd5941",
+    "libggml-base.so.0.25.3": "0b04266dbd16a5fe5292c889587c57da0834d32e3e4af264e8481cd2cca062ae",
+    "libllama-common.so.0.5.0": "448235886e298c68f596ac729fbba97f6d92a213e518f887b6dfd828d2b50b55",
+    "libmtmd.so.0.5.0": "e2f25093fc2e4a056420a1b6c82866ca3b9676486c7d2b7aa123aac5e100176f",
+    "libllama-server-impl.so": "a7e9f38026fc201e29092ead799ce3d2268cca2f40e95fee3292a775d3d4414f"
+  },
+  "throughput_qualified": false,
+  "full_length_context_qualified": false,
+  "gpu_control_configuration_preserved": true,
+  "cases": [
+    {
+      "mtp": 0,
+      "context_reserved": 8192,
+      "split": "3,2",
+      "microbatch": 32,
+      "speculative": false,
+      "checks": [
+        {"case": "exact", "passed": true},
+        {"case": "json", "passed": true},
+        {"case": "retrieval", "passed": true},
+        {"case": "prose", "passed": true}
+      ],
+      "shutdown_exit": 143
+    },
+    {
+      "mtp": 4,
+      "context_reserved": 8192,
+      "split": "3,2",
+      "microbatch": 32,
+      "speculative": true,
+      "checks": [
+        {"case": "exact", "passed": true},
+        {"case": "json", "passed": true},
+        {"case": "retrieval", "passed": true},
+        {"case": "prose", "passed": true}
+      ],
+      "shutdown_exit": 143
+    }
+  ]
+}

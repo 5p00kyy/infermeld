@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "status": "Private candidate; allocation and short-serving evidence, not full-length context quality or sustained throughput.",
+  "date": "2026-10-04",
+  "source_pin": "b92761a515ea31e852e7fbc1fad5f874b46f3718",
+  "hardware": [
+    "RX 6900 XT 16 GB (AMD Vulkan)",
+    "RTX 3080 10 GB (NVIDIA CUDA)"
+  ],
+  "mtp": 4,
+  "cache": "q8_0 target and draft",
+  "microbatch": 32,
+  "batch": 512,
+
+  "long_context_quality_tested": false,
+  "sustained_q4_throughput_tested": false,
+  "models": [
+    {
+      "family": "dense",
+      "artifact": "Qwen3.8-27B-UD-Q4_K_M.gguf",
+      "source_repository": "unsloth/Qwen3.8-27B-GGUF",
+      "source_revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+      "model_creator": "Qwen Team",
+      "quantization_publisher": "Unsloth",
+      "publisher_declared_license": "apache-2.0",
+      "license_evidence": "Pinned source repository cardData and license tag, verified 2026-10-04; weights not redistributed.",
+      "bytes": 16464440224,
+      "sha256": "322e194ff79741c7baa497c240f677f54b201b0efab44ca8e50f122b39123482",
+      "cases": [
+        {
+          "context_reserved": 8192,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 10058.33984375,
+          "nvidia_card_peak_mib": 7532.0
+        },
+        {
+          "context_reserved": 32768,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 10574.34375,
+          "nvidia_card_peak_mib": 8092.0
+        },
+        {
+          "context_reserved": 65536,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 11262.3515625,
+          "nvidia_card_peak_mib": 8840.0
+        },
+        {
+          "context_reserved": 131072,
+          "split": "2:1",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 13794.671875,
+          "nvidia_card_peak_mib": 9176.0
+        }
+      ]
+    },
+    {
+      "family": "moe",
+      "artifact": "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+      "source_repository": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+      "source_revision": "5bc3e238d916f48a861bac2f8a1990a0e9b7e98d",
+      "model_creator": "Qwen Team",
+      "quantization_publisher": "Unsloth",
+      "publisher_declared_license": "apache-2.0",
+      "license_evidence": "Pinned source repository cardData and license tag, verified 2026-10-04; weights not redistributed.",
+      "bytes": 22663387424,
+      "sha256": "0b21525e972670ed59e1812e170b27c26355381f0656ecc4e25617ece7dac58b",
+      "cases": [
+        {
+          "context_reserved": 8192,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 14552.23046875,
+          "nvidia_card_peak_mib": 8542.0
+        },
+        {
+          "context_reserved": 32768,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 14712.1015625,
+          "nvidia_card_peak_mib": 8776.0
+        },
+        {
+          "context_reserved": 65536,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 14922.0859375,
+          "nvidia_card_peak_mib": 9090.0
+        },
+        {
+          "context_reserved": 131072,
+          "split": "3:2",
+          "short_checks_passed": 4,
+          "amd_card_peak_mib": 15338.60546875,
+          "nvidia_card_peak_mib": 9718.0
+        }
+      ]
+    }
+  ],
+  "failed_conditions": [
+    {
+      "family": "dense",
+      "context_reserved": 131072,
+      "split": "3:2",
+      "reason": "server exited during loading"
+    }
+  ]
+}
